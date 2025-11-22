@@ -1,0 +1,130 @@
+====================================================================================================
+REPORTE DE PREPROCESAMIENTO DE DATOS
+Generado: 2025-10-24 12:22:12
+====================================================================================================
+
+RESUMEN GENERAL
+----------------------------------------------------------------------------------------------------
+Shape original: (196162, 10)
+Shape final: (196152, 40)
+Registros eliminados: 10
+Features creadas: 30
+Tiempo total: 10.28 segundos
+
+
+5.1. LIMPIEZA DE DATOS
+----------------------------------------------------------------------------------------------------
+  • FECHA: Convertida a datetime
+  • Eliminados 5 registros duplicados
+  • OBJETO_FIJO: Creada columna binaria INVOLUCRA_OBJETO_FIJO (1=Sí, 0=No)
+  • CHOQUE: Imputado con moda (1)
+  • Eliminados 5 registros con valores críticos faltantes
+
+Tiempo: 0.48s
+
+5.2. FEATURE ENGINEERING
+----------------------------------------------------------------------------------------------------
+  • Creadas 12 features temporales
+  • Creadas features de severidad
+  • Creadas features geográficas
+  • Creadas features de interacción
+  • Creadas features agregadas
+
+Nuevas features (24):
+  - INVOLUCRA_OBJETO_FIJO
+  - anio
+  - mes
+  - dia_mes
+  - dia_semana
+  - nombre_dia
+  - trimestre
+  - semana_anio
+  - es_fin_semana
+  - hora_num
+  - periodo_dia
+  - franja_horaria
+  - puntaje_gravedad
+  - choque_multiple
+  - riesgo_alto
+  - localidad_nombre
+  - zona_bogota
+  - tipo_via
+  - gravedad_x_periodo
+  - momento_semana
+  - zona_x_periodo
+  - siniestros_localidad
+  - siniestros_tipo_via
+  - siniestros_periodo
+
+Tiempo: 1.99s
+
+5.4. TRANSFORMACIÓN Y ENCODING
+----------------------------------------------------------------------------------------------------
+  • DIRECCION eliminada (reemplazada por tipo_via)
+  • periodo_dia: Encoding ordinal aplicado
+  • franja_horaria: Encoding binario aplicado
+  • nombre_dia: Label Encoding aplicado
+  • periodo_dia: One-Hot Encoding aplicado (3 columnas)
+  • franja_horaria: One-Hot Encoding aplicado (1 columnas)
+  • localidad_nombre: Label Encoding aplicado
+  • zona_bogota: One-Hot Encoding aplicado (3 columnas)
+  • tipo_via: One-Hot Encoding aplicado (4 columnas)
+  • gravedad_x_periodo: Label Encoding aplicado
+  • momento_semana: One-Hot Encoding aplicado (3 columnas)
+  • zona_x_periodo: Label Encoding aplicado
+  • Eliminadas 11 columnas redundantes
+
+Tiempo: 0.90s
+
+5.3. REDUCCIÓN DE DIMENSIONALIDAD
+----------------------------------------------------------------------------------------------------
+  • Eliminadas 6 features con correlación > 0.95
+
+Tiempo: 0.41s
+
+COLUMNAS FINALES DEL DATASET
+----------------------------------------------------------------------------------------------------
+    1. CODIGO_ACCIDENTE (float64)
+    2. FECHA (datetime64[ns])
+    3. GRAVEDAD (Int64)
+    4. CLASE (Int64)
+    5. CHOQUE (Int64)
+    6. CODIGO_LOCALIDAD (Int64)
+    7. DISENO_LUGAR (Int64)
+    8. anio (int32)
+    9. mes (int32)
+   10. dia_mes (int32)
+   11. dia_semana (int32)
+   12. es_fin_semana (int64)
+   13. hora_num (int32)
+   14. riesgo_alto (int64)
+   15. siniestros_localidad (int64)
+   16. siniestros_tipo_via (int64)
+   17. siniestros_periodo (int64)
+   18. zona_occidente (int64)
+   19. zona_sur (int64)
+   20. zona_norte (int64)
+   21. zona_centro (int64)
+   22. franja_horaria_bin (int64)
+   23. nombre_dia_encoded (int64)
+   24. periodo_dia_MANANA (bool)
+   25. periodo_dia_NOCHE (bool)
+   26. periodo_dia_TARDE (bool)
+   27. franja_horaria_VALLE (bool)
+   28. localidad_nombre_encoded (int64)
+   29. zona_bogota_NORTE (bool)
+   30. zona_bogota_OCCIDENTE (bool)
+   31. zona_bogota_SUR (bool)
+   32. tipo_via_CALLE (bool)
+   33. tipo_via_CARRERA (bool)
+   34. tipo_via_DIAGONAL (bool)
+   35. tipo_via_OTRA (bool)
+   36. gravedad_x_periodo_encoded (int64)
+   37. momento_semana_FDS_VALLE (bool)
+   38. momento_semana_LABORAL_PICO (bool)
+   39. momento_semana_LABORAL_VALLE (bool)
+   40. zona_x_periodo_encoded (int64)
+
+====================================================================================================
+FIN DEL REPORTE
+====================================================================================================
