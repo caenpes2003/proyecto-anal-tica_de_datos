@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7ef404e7905aa3ad45bae2714cca4e16 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed;
+            top: 10px; left: 50px; width: 400px; height: 90px;
+            background-color: white; border:2px solid grey; z-index:9999;
+            font-size:14px; padding: 10px; border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+    <h4 style="margin:0;">Top 20 Intersecciones Criticas</h4>
+    <p style="margin:5px 0; font-size:12px;">
+        Bogota D.C. (2015-2020)<br>
+        <span style="color:#8B0000;">■</span> CRITICO
+        <span style="color:#FF4500;">■</span> ALTO
+        <span style="color:#FFA500;">■</span> MEDIO
+    </p>
+</div>
+    
+            <div class="folium-map" id="map_7ef404e7905aa3ad45bae2714cca4e16" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7ef404e7905aa3ad45bae2714cca4e16 = L.map(
+                "map_7ef404e7905aa3ad45bae2714cca4e16",
+                {
+                    center: [4.6533, -74.0836],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b33f6cdb3ab47507f4c2ff366d01bcb4 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b33f6cdb3ab47507f4c2ff366d01bcb4.addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var marker_caa045167d55007a7baade1f03c98e89 = L.marker(
+                [4.6140101, -74.1753566],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_49d5602ef7581365d8c6bc575c37d669 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #8B0000; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        1\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_4ae8004e538180807a508e841ea226af = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_97946aae6dc9ed101d4ea8840616179e = $(`<div id="html_97946aae6dc9ed101d4ea8840616179e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#8B0000;">#1 - CRITICO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>KR 80-CL 2 51</p>         <p style="margin:5px 0;"><b>Localidad:</b> KENNEDY</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 34<br>             <b>Gravedad promedio:</b> 2.68<br>             <b>Score de riesgo:</b> 100.0/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.61401, -74.17536)         </p>     </div>     </div>`)[0];
+                popup_4ae8004e538180807a508e841ea226af.setContent(html_97946aae6dc9ed101d4ea8840616179e);
+            
+        
+
+        marker_caa045167d55007a7baade1f03c98e89.bindPopup(popup_4ae8004e538180807a508e841ea226af)
+        ;
+
+        
+    
+    
+                marker_caa045167d55007a7baade1f03c98e89.setIcon(div_icon_49d5602ef7581365d8c6bc575c37d669);
+            
+    
+            var marker_7ec7030cb85956ae5f7950289c6af1df = L.marker(
+                [4.63, -74.1],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_2e64f69c2dd650954a66ca781404ca4d = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #8B0000; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        2\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_c1eec0ae1288c846d2b94238e651b582 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9f16d3f56084596dadcb38d8a3d25fe4 = $(`<div id="html_9f16d3f56084596dadcb38d8a3d25fe4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#8B0000;">#2 - CRITICO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>AV AV BOYACA-CL 26 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> FONTIBON</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 30<br>             <b>Gravedad promedio:</b> 2.80<br>             <b>Score de riesgo:</b> 92.1/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.63000, -74.10000)         </p>     </div>     </div>`)[0];
+                popup_c1eec0ae1288c846d2b94238e651b582.setContent(html_9f16d3f56084596dadcb38d8a3d25fe4);
+            
+        
+
+        marker_7ec7030cb85956ae5f7950289c6af1df.bindPopup(popup_c1eec0ae1288c846d2b94238e651b582)
+        ;
+
+        
+    
+    
+                marker_7ec7030cb85956ae5f7950289c6af1df.setIcon(div_icon_2e64f69c2dd650954a66ca781404ca4d);
+            
+    
+            var marker_136514fc7a62382393a52181c3d2b929 = L.marker(
+                [4.643371999999999, -74.16093599999999],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_64292f1adbab9e68b8d956c63e4e719d = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #8B0000; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        3\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_81a72694183c800fb67167491fc4af6d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8d42fabc07f82aa1e09b9c54acf377d0 = $(`<div id="html_8d42fabc07f82aa1e09b9c54acf377d0" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#8B0000;">#3 - CRITICO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>KR 50-CL 3 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> PUENTE ARANDA</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 26<br>             <b>Gravedad promedio:</b> 2.88<br>             <b>Score de riesgo:</b> 82.0/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.64337, -74.16094)         </p>     </div>     </div>`)[0];
+                popup_81a72694183c800fb67167491fc4af6d.setContent(html_8d42fabc07f82aa1e09b9c54acf377d0);
+            
+        
+
+        marker_136514fc7a62382393a52181c3d2b929.bindPopup(popup_81a72694183c800fb67167491fc4af6d)
+        ;
+
+        
+    
+    
+                marker_136514fc7a62382393a52181c3d2b929.setIcon(div_icon_64292f1adbab9e68b8d956c63e4e719d);
+            
+    
+            var marker_a6d5c007a16b1272264bd7d2387014ba = L.marker(
+                [4.697, -74.088],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_9a0c52715a67006da5dfb0cfa023122f = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FF4500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        4\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_aa3ec36e010512b22bf676225db5d74a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d822c44aef5a0d85fa5213e11d41c61a = $(`<div id="html_d822c44aef5a0d85fa5213e11d41c61a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FF4500;">#4 - ALTO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>CL 80-KR 72 2</p>         <p style="margin:5px 0;"><b>Localidad:</b> ENGATIVA</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 24<br>             <b>Gravedad promedio:</b> 3.00<br>             <b>Score de riesgo:</b> 78.7/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.69700, -74.08800)         </p>     </div>     </div>`)[0];
+                popup_aa3ec36e010512b22bf676225db5d74a.setContent(html_d822c44aef5a0d85fa5213e11d41c61a);
+            
+        
+
+        marker_a6d5c007a16b1272264bd7d2387014ba.bindPopup(popup_aa3ec36e010512b22bf676225db5d74a)
+        ;
+
+        
+    
+    
+                marker_a6d5c007a16b1272264bd7d2387014ba.setIcon(div_icon_9a0c52715a67006da5dfb0cfa023122f);
+            
+    
+            var marker_08ea644b75cb3b8d70e3d64af2a306b0 = L.marker(
+                [4.691, -74.031],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_24c5c4fbd29cc0f40944984cad0efca6 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FF4500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        5\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_b2e3c0159bae376f0534b2f6a2f9f7d2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8b79b29b5d5516787f9394c9e7c43470 = $(`<div id="html_8b79b29b5d5516787f9394c9e7c43470" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FF4500;">#5 - ALTO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>CL 100-KR 15 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> USAQUEN</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 24<br>             <b>Gravedad promedio:</b> 2.92<br>             <b>Score de riesgo:</b> 76.4/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.69100, -74.03100)         </p>     </div>     </div>`)[0];
+                popup_b2e3c0159bae376f0534b2f6a2f9f7d2.setContent(html_8b79b29b5d5516787f9394c9e7c43470);
+            
+        
+
+        marker_08ea644b75cb3b8d70e3d64af2a306b0.bindPopup(popup_b2e3c0159bae376f0534b2f6a2f9f7d2)
+        ;
+
+        
+    
+    
+                marker_08ea644b75cb3b8d70e3d64af2a306b0.setIcon(div_icon_24c5c4fbd29cc0f40944984cad0efca6);
+            
+    
+            var marker_5382d93bc025382ee5a534862f1e4f04 = L.marker(
+                [4.697, -74.094],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_3b0d93e54abe829d7885ffbb6fe5ce05 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FF4500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        6\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_d65a87be0206be6475cd47d94dd3227a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a2a1cea4d1d58a8dd758215573db0349 = $(`<div id="html_a2a1cea4d1d58a8dd758215573db0349" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FF4500;">#6 - ALTO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>AV AV BOYACA-CL 80 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> ENGATIVA</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 24<br>             <b>Gravedad promedio:</b> 2.88<br>             <b>Score de riesgo:</b> 75.3/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.69700, -74.09400)         </p>     </div>     </div>`)[0];
+                popup_d65a87be0206be6475cd47d94dd3227a.setContent(html_a2a1cea4d1d58a8dd758215573db0349);
+            
+        
+
+        marker_5382d93bc025382ee5a534862f1e4f04.bindPopup(popup_d65a87be0206be6475cd47d94dd3227a)
+        ;
+
+        
+    
+    
+                marker_5382d93bc025382ee5a534862f1e4f04.setIcon(div_icon_3b0d93e54abe829d7885ffbb6fe5ce05);
+            
+    
+            var marker_087275684de9503ed4f1ce6cd8c30e15 = L.marker(
+                [4.5855203, -74.0702295],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_9de4a12a6ae4acf64d58116dee9dba31 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FF4500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        7\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_e8515bef366c2d02a4b26a1d6f693a8b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8642ab355bc4486b34a6f6e28b154e83 = $(`<div id="html_8642ab355bc4486b34a6f6e28b154e83" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FF4500;">#7 - ALTO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>KR 30-CL 6 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> MARTIRES</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 23<br>             <b>Gravedad promedio:</b> 2.83<br>             <b>Score de riesgo:</b> 70.8/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.58552, -74.07023)         </p>     </div>     </div>`)[0];
+                popup_e8515bef366c2d02a4b26a1d6f693a8b.setContent(html_8642ab355bc4486b34a6f6e28b154e83);
+            
+        
+
+        marker_087275684de9503ed4f1ce6cd8c30e15.bindPopup(popup_e8515bef366c2d02a4b26a1d6f693a8b)
+        ;
+
+        
+    
+    
+                marker_087275684de9503ed4f1ce6cd8c30e15.setIcon(div_icon_9de4a12a6ae4acf64d58116dee9dba31);
+            
+    
+            var marker_ca137da1d63e06a218b296843c2a3d09 = L.marker(
+                [4.697, -74.088],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_2337726b8ac7d89d2de403c0dcab2230 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FF4500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        8\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_8cfb5fa50702e42ff0129b10a114f610 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8bfe0075a9fc49a4c1abb80e260b7d91 = $(`<div id="html_8bfe0075a9fc49a4c1abb80e260b7d91" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FF4500;">#8 - ALTO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>CL 80-KR 72 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> ENGATIVA</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 22<br>             <b>Gravedad promedio:</b> 2.91<br>             <b>Score de riesgo:</b> 69.7/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.69700, -74.08800)         </p>     </div>     </div>`)[0];
+                popup_8cfb5fa50702e42ff0129b10a114f610.setContent(html_8bfe0075a9fc49a4c1abb80e260b7d91);
+            
+        
+
+        marker_ca137da1d63e06a218b296843c2a3d09.bindPopup(popup_8cfb5fa50702e42ff0129b10a114f610)
+        ;
+
+        
+    
+    
+                marker_ca137da1d63e06a218b296843c2a3d09.setIcon(div_icon_2337726b8ac7d89d2de403c0dcab2230);
+            
+    
+            var marker_f84bb2a640686e1dcdc758d68dce9191 = L.marker(
+                [4.639, -74.094],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_60d4a58bb48748f8e5b8172c883472e7 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FF4500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        9\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_f346703485720793ee78ab1e3b64a9d6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1b012a9747d29fe22d867b84dfe5cb9a = $(`<div id="html_1b012a9747d29fe22d867b84dfe5cb9a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FF4500;">#9 - ALTO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>CL 26-KR 72 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> FONTIBON</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 22<br>             <b>Gravedad promedio:</b> 2.91<br>             <b>Score de riesgo:</b> 69.7/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.63900, -74.09400)         </p>     </div>     </div>`)[0];
+                popup_f346703485720793ee78ab1e3b64a9d6.setContent(html_1b012a9747d29fe22d867b84dfe5cb9a);
+            
+        
+
+        marker_f84bb2a640686e1dcdc758d68dce9191.bindPopup(popup_f346703485720793ee78ab1e3b64a9d6)
+        ;
+
+        
+    
+    
+                marker_f84bb2a640686e1dcdc758d68dce9191.setIcon(div_icon_60d4a58bb48748f8e5b8172c883472e7);
+            
+    
+            var marker_378765275a300ce03df68b33f7fc076c = L.marker(
+                [4.687538099999999, -74.0944131],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_f0548911445ea45e289e49360c2ca172 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FF4500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        10\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_b33246e5f00e45e2e63df1a9e0773728 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1e3b9912cdb63db52d097d6a0cb12ecd = $(`<div id="html_1e3b9912cdb63db52d097d6a0cb12ecd" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FF4500;">#10 - ALTO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>CL 13-KR 72 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> FONTIBON</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 21<br>             <b>Gravedad promedio:</b> 2.86<br>             <b>Score de riesgo:</b> 65.2/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.68754, -74.09441)         </p>     </div>     </div>`)[0];
+                popup_b33246e5f00e45e2e63df1a9e0773728.setContent(html_1e3b9912cdb63db52d097d6a0cb12ecd);
+            
+        
+
+        marker_378765275a300ce03df68b33f7fc076c.bindPopup(popup_b33246e5f00e45e2e63df1a9e0773728)
+        ;
+
+        
+    
+    
+                marker_378765275a300ce03df68b33f7fc076c.setIcon(div_icon_f0548911445ea45e289e49360c2ca172);
+            
+    
+            var marker_207a78f61736280c99bdeb72c0b63334 = L.marker(
+                [4.638276299999999, -74.1587524],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_5f28e88e79033faee512ef561c5a61a0 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FF4500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        11\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_75c49d66e9dbccdac2910425d6db74cd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_45f642a34f8e43539f5155d50d2630a7 = $(`<div id="html_45f642a34f8e43539f5155d50d2630a7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FF4500;">#11 - ALTO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>AV AV CIUDAD DE CALI-CL 26 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> FONTIBON</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 22<br>             <b>Gravedad promedio:</b> 2.73<br>             <b>Score de riesgo:</b> 65.2/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.63828, -74.15875)         </p>     </div>     </div>`)[0];
+                popup_75c49d66e9dbccdac2910425d6db74cd.setContent(html_45f642a34f8e43539f5155d50d2630a7);
+            
+        
+
+        marker_207a78f61736280c99bdeb72c0b63334.bindPopup(popup_75c49d66e9dbccdac2910425d6db74cd)
+        ;
+
+        
+    
+    
+                marker_207a78f61736280c99bdeb72c0b63334.setIcon(div_icon_5f28e88e79033faee512ef561c5a61a0);
+            
+    
+            var marker_c7cf353ea7b411d39974ac70c35740e4 = L.marker(
+                [4.6803567, -74.1001764],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_f8f5815893ec3e67fdc5ba2ccf5597d6 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FF4500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        12\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_1c28394387aa00f2b03ee87b9b144c8c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f7e7f35d4bd2177be169ab6297ba0f88 = $(`<div id="html_f7e7f35d4bd2177be169ab6297ba0f88" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FF4500;">#12 - ALTO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>AV AV BOYACA-CL 12 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> KENNEDY</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 20<br>             <b>Gravedad promedio:</b> 2.90<br>             <b>Score de riesgo:</b> 62.9/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.68036, -74.10018)         </p>     </div>     </div>`)[0];
+                popup_1c28394387aa00f2b03ee87b9b144c8c.setContent(html_f7e7f35d4bd2177be169ab6297ba0f88);
+            
+        
+
+        marker_c7cf353ea7b411d39974ac70c35740e4.bindPopup(popup_1c28394387aa00f2b03ee87b9b144c8c)
+        ;
+
+        
+    
+    
+                marker_c7cf353ea7b411d39974ac70c35740e4.setIcon(div_icon_f8f5815893ec3e67fdc5ba2ccf5597d6);
+            
+    
+            var marker_29e23a1580d12157ea31597afbcd4547 = L.marker(
+                [4.6287913, -74.1181373],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_d2431a75e645b8693b837e27809f89d8 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FFA500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        13\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_e542088528dea85c71c2d7613de62f49 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a403c3601c8f32c22da38168fd560941 = $(`<div id="html_a403c3601c8f32c22da38168fd560941" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FFA500;">#13 - MEDIO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>AV AV DE LAS AMERICAS-KR 68 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> KENNEDY</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 20<br>             <b>Gravedad promedio:</b> 2.70<br>             <b>Score de riesgo:</b> 58.4/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.62879, -74.11814)         </p>     </div>     </div>`)[0];
+                popup_e542088528dea85c71c2d7613de62f49.setContent(html_a403c3601c8f32c22da38168fd560941);
+            
+        
+
+        marker_29e23a1580d12157ea31597afbcd4547.bindPopup(popup_e542088528dea85c71c2d7613de62f49)
+        ;
+
+        
+    
+    
+                marker_29e23a1580d12157ea31597afbcd4547.setIcon(div_icon_d2431a75e645b8693b837e27809f89d8);
+            
+    
+            var marker_3b231f7cb82a957ecbcf73c3cec905d0 = L.marker(
+                [4.578342399999999, -74.14148329999999],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_cf3d725a0af2b8499ef329e03a46e7fb = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FFA500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        14\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_c60ad6f0eefe5a302468d82ab220fd2b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b90d7d19e6ab849a9c024df1772dfb11 = $(`<div id="html_b90d7d19e6ab849a9c024df1772dfb11" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FFA500;">#14 - MEDIO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>AV AV BOYACA-CL 60 S 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> CIUDAD BOLIVAR</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 19<br>             <b>Gravedad promedio:</b> 2.84<br>             <b>Score de riesgo:</b> 58.4/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.57834, -74.14148)         </p>     </div>     </div>`)[0];
+                popup_c60ad6f0eefe5a302468d82ab220fd2b.setContent(html_b90d7d19e6ab849a9c024df1772dfb11);
+            
+        
+
+        marker_3b231f7cb82a957ecbcf73c3cec905d0.bindPopup(popup_c60ad6f0eefe5a302468d82ab220fd2b)
+        ;
+
+        
+    
+    
+                marker_3b231f7cb82a957ecbcf73c3cec905d0.setIcon(div_icon_cf3d725a0af2b8499ef329e03a46e7fb);
+            
+    
+            var marker_37400a4b0a89332e4be1a56ee23bb8af = L.marker(
+                [4.655361, -74.11625099999999],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_259e57e0c140d4d1cb644a91f3472ead = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FFA500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        15\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_5c2aa2211788754e7cf0b45275fb1440 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7a38f224acddf8cbd7d237cef6fea496 = $(`<div id="html_7a38f224acddf8cbd7d237cef6fea496" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FFA500;">#15 - MEDIO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>CL 22C-KR 68F 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> FONTIBON</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 18<br>             <b>Gravedad promedio:</b> 3.00<br>             <b>Score de riesgo:</b> 58.4/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.65536, -74.11625)         </p>     </div>     </div>`)[0];
+                popup_5c2aa2211788754e7cf0b45275fb1440.setContent(html_7a38f224acddf8cbd7d237cef6fea496);
+            
+        
+
+        marker_37400a4b0a89332e4be1a56ee23bb8af.bindPopup(popup_5c2aa2211788754e7cf0b45275fb1440)
+        ;
+
+        
+    
+    
+                marker_37400a4b0a89332e4be1a56ee23bb8af.setIcon(div_icon_259e57e0c140d4d1cb644a91f3472ead);
+            
+    
+            var marker_62ad92c483bec8a5e74830f74e7eadb4 = L.marker(
+                [4.6803567, -74.1001764],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_46e577f75961158e5a38df4e1fdd8299 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FFA500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        16\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_db9642d474ef3ee0bf46184e1b1152cf = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f52aa3d1daa30000b3febfbfc2c89c9e = $(`<div id="html_f52aa3d1daa30000b3febfbfc2c89c9e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FFA500;">#16 - MEDIO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>AV AV BOYACA-CL 13 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> FONTIBON</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 19<br>             <b>Gravedad promedio:</b> 2.84<br>             <b>Score de riesgo:</b> 58.4/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.68036, -74.10018)         </p>     </div>     </div>`)[0];
+                popup_db9642d474ef3ee0bf46184e1b1152cf.setContent(html_f52aa3d1daa30000b3febfbfc2c89c9e);
+            
+        
+
+        marker_62ad92c483bec8a5e74830f74e7eadb4.bindPopup(popup_db9642d474ef3ee0bf46184e1b1152cf)
+        ;
+
+        
+    
+    
+                marker_62ad92c483bec8a5e74830f74e7eadb4.setIcon(div_icon_46e577f75961158e5a38df4e1fdd8299);
+            
+    
+            var marker_a4a734aa8a9595e350958ee08fcf9f35 = L.marker(
+                [4.680305, -74.057766],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_d370efd6f683b0f268236dd2856a07af = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FFA500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        17\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_783c7e343def2d4415dd53c2be8b72eb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a5f59bfc8bda93aade6b8d11527f2008 = $(`<div id="html_a5f59bfc8bda93aade6b8d11527f2008" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FFA500;">#17 - MEDIO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>CL 100-KR 45 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> USAQUEN</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 18<br>             <b>Gravedad promedio:</b> 2.94<br>             <b>Score de riesgo:</b> 57.3/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.68030, -74.05777)         </p>     </div>     </div>`)[0];
+                popup_783c7e343def2d4415dd53c2be8b72eb.setContent(html_a5f59bfc8bda93aade6b8d11527f2008);
+            
+        
+
+        marker_a4a734aa8a9595e350958ee08fcf9f35.bindPopup(popup_783c7e343def2d4415dd53c2be8b72eb)
+        ;
+
+        
+    
+    
+                marker_a4a734aa8a9595e350958ee08fcf9f35.setIcon(div_icon_d370efd6f683b0f268236dd2856a07af);
+            
+    
+            var marker_383ff476030b9659c4ac676d5a4f75c5 = L.marker(
+                [4.658021499999999, -74.1187152],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_1ffba5b89e07a53ded67b4e486d0ad4e = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FFA500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        18\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_97d596985ba162efddbd11fe044e803d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0557e00d213b102c99daa5fc7cc9f52c = $(`<div id="html_0557e00d213b102c99daa5fc7cc9f52c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FFA500;">#18 - MEDIO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>AV AV BOYACA-CL 19 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> FONTIBON</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 18<br>             <b>Gravedad promedio:</b> 2.94<br>             <b>Score de riesgo:</b> 57.3/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.65802, -74.11872)         </p>     </div>     </div>`)[0];
+                popup_97d596985ba162efddbd11fe044e803d.setContent(html_0557e00d213b102c99daa5fc7cc9f52c);
+            
+        
+
+        marker_383ff476030b9659c4ac676d5a4f75c5.bindPopup(popup_97d596985ba162efddbd11fe044e803d)
+        ;
+
+        
+    
+    
+                marker_383ff476030b9659c4ac676d5a4f75c5.setIcon(div_icon_1ffba5b89e07a53ded67b4e486d0ad4e);
+            
+    
+            var marker_e86e8622bd5d3555ea6e971cb9a9b9ff = L.marker(
+                [4.6140101, -74.1753566],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_4cb43ee3566f4499176c9057f81a31a6 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FFA500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        19\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_356f638f3b115ac84e3be28912c40129 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5ee64b7fad6c36e36fceec96efea9054 = $(`<div id="html_5ee64b7fad6c36e36fceec96efea9054" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FFA500;">#19 - MEDIO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>KR 80-CL 2 S 51</p>         <p style="margin:5px 0;"><b>Localidad:</b> KENNEDY</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 19<br>             <b>Gravedad promedio:</b> 2.74<br>             <b>Score de riesgo:</b> 56.2/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.61401, -74.17536)         </p>     </div>     </div>`)[0];
+                popup_356f638f3b115ac84e3be28912c40129.setContent(html_5ee64b7fad6c36e36fceec96efea9054);
+            
+        
+
+        marker_e86e8622bd5d3555ea6e971cb9a9b9ff.bindPopup(popup_356f638f3b115ac84e3be28912c40129)
+        ;
+
+        
+    
+    
+                marker_e86e8622bd5d3555ea6e971cb9a9b9ff.setIcon(div_icon_4cb43ee3566f4499176c9057f81a31a6);
+            
+    
+            var marker_b5d1fea74748e84710857146c05e90f1 = L.marker(
+                [4.5758722, -74.1395402],
+                {
+}
+            ).addTo(map_7ef404e7905aa3ad45bae2714cca4e16);
+        
+    
+            var div_icon_eae1bf75529417cb3a0a7bde9f555101 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"font-size: 14px; font-weight: bold; color: white;\n                background-color: #FFA500; border-radius: 50%;\n                width: 30px; height: 30px; display: flex;\n                align-items: center; justify-content: center;\n                border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);\"\u003e\n        20\n    \u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_1330b05e36183a1a04bf64bb5c882dff = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_fbe470f84ac3928eaac3315f60d90602 = $(`<div id="html_fbe470f84ac3928eaac3315f60d90602" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 280px;">         <h3 style="margin:0; color:#FFA500;">#20 - MEDIO</h3>         <hr style="margin:5px 0;">         <p style="margin:5px 0;"><b>Interseccion:</b><br>AV AV BOYACA-KR 24 02</p>         <p style="margin:5px 0;"><b>Localidad:</b> TUNJUELITO</p>         <p style="margin:5px 0;">             <b>Siniestros graves:</b> 19<br>             <b>Gravedad promedio:</b> 2.68<br>             <b>Score de riesgo:</b> 55.1/100         </p>         <hr style="margin:5px 0;">         <p style="margin:5px 0; font-size:11px; color:grey;">             Coordenadas: (4.57587, -74.13954)         </p>     </div>     </div>`)[0];
+                popup_1330b05e36183a1a04bf64bb5c882dff.setContent(html_fbe470f84ac3928eaac3315f60d90602);
+            
+        
+
+        marker_b5d1fea74748e84710857146c05e90f1.bindPopup(popup_1330b05e36183a1a04bf64bb5c882dff)
+        ;
+
+        
+    
+    
+                marker_b5d1fea74748e84710857146c05e90f1.setIcon(div_icon_eae1bf75529417cb3a0a7bde9f555101);
+            
+</script>
+</html>
