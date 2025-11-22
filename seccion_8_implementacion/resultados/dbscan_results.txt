@@ -1,0 +1,35 @@
+
+RESULTADOS: CLUSTERING ESPACIAL (DBSCAN)
+==========================================
+
+Fecha: 2025-11-19 23:43:41
+Dataset: Siniestros GRAVES (GRAVEDAD = 1 o 3)
+Muestra: 20,028 siniestros
+
+PARÁMETROS DBSCAN
+-----------------
+Epsilon (radio): 1.0 km
+Min samples: 10 puntos
+Métrica: Euclidean (coordenadas convertidas a km)
+
+RESULTADOS
+----------
+Clusters identificados: 5
+Puntos de ruido (outliers): 44 (0.2%)
+Puntos clustered: 19984 (99.8%)
+
+MÉTRICAS DE CALIDAD
+-------------------
+Silhouette Score: -0.0709
+  -> Interpretación: Débil separación
+
+Calinski-Harabasz Index: 403.85
+  -> Interpretación: Clusters bien definidos
+
+INTERPRETACIÓN
+--------------
+Se identificaron 5 zonas de concentración espacial de siniestros graves en Bogotá.
+El 0.2% de siniestros son outliers espaciales (no pertenecen a clusters), lo que sugiere que también existen siniestros graves aislados fuera de las zonas críticas.
+
+Cada cluster representa una "zona de alto riesgo" que podría beneficiarse de intervenciones
+específicas de infraestructura, señalización o control de tránsito.

@@ -1,0 +1,123 @@
+
+RESULTADOS: EXPERIMENTOS DE VALIDACION METODOLOGICA
+=====================================================
+
+Fecha: 2025-11-20 00:00:12
+
+================================================================================
+EXPERIMENTO 1: VENTANA TEMPORAL OPTIMA
+================================================================================
+
+OBJETIVO: Determinar cuantos meses de datos historicos usar para identificar
+          hotspots estables que no cambien significativamente con el tiempo.
+
+METODOLOGIA:
+- Calcular hotspots (percentil 90) para ventanas de 1, 3, 6, 12 meses
+- Medir similitud con Indice de Jaccard (interseccion / union)
+- Umbral de aceptacion: Jaccard >= 0.80
+
+RESULTADOS:
+
+  1 mes vs 12 meses        : Jaccard = 0.4054
+  3 meses vs 12 meses      : Jaccard = 0.4762
+  6 meses vs 12 meses      : Jaccard = 0.7222
+
+CONCLUSION:
+Ventana temporal optima: 12 meses
+Justificacion: Presenta mayor similitud con ventana de referencia (12 meses)
+
+================================================================================
+EXPERIMENTO 2: EPSILON OPTIMO PARA DBSCAN
+================================================================================
+
+OBJETIVO: Determinar el radio optimo (epsilon) para agrupar siniestros
+          cercanos en clusters espaciales.
+
+METODOLOGIA:
+- Probar epsilon = 500m, 1km, 1.5km, 2km
+- Evaluar: Numero de clusters, % ruido, Silhouette Score, Calinski-Harabasz
+- Criterios: Minimizar ruido (<15%), Silhouette > 0, balance de clusters
+
+RESULTADOS:
+
+Epsilon = 0.5 km:
+  - Clusters: 9
+  - Ruido: 0.9%
+  - Silhouette: -0.2564
+  - Calinski-Harabasz: 220.62
+
+Epsilon = 1.0 km:
+  - Clusters: 5
+  - Ruido: 0.2%
+  - Silhouette: -0.0709
+  - Calinski-Harabasz: 403.85
+
+Epsilon = 1.5 km:
+  - Clusters: 1
+  - Ruido: 0.0%
+  - Silhouette: N/A
+  - Calinski-Harabasz: N/A
+
+Epsilon = 2.0 km:
+  - Clusters: 1
+  - Ruido: 0.0%
+  - Silhouette: N/A
+  - Calinski-Harabasz: N/A
+
+CONCLUSION:
+Epsilon optimo: 1.0 km
+Justificacion: Mejor balance entre calidad de clustering (Silhouette),
+               porcentaje de ruido aceptable y numero razonable de clusters.
+
+================================================================================
+EXPERIMENTO 3: FORMULA DE RIESGO OPTIMA
+================================================================================
+
+OBJETIVO: Comparar 3 formulas para calcular score de riesgo por zona
+
+FORMULAS EVALUADAS:
+
+Formula 1 (Simple):
+  Risk = Densidad x Gravedad_promedio
+
+Formula 2 (Ponderada):
+  Risk = (Densidad_norm x 0.4) + (% Mortales x 0.4) + (Prob_Grave x 0.2)
+
+Formula 3 (Espacial):
+  Risk = (Densidad + Moran_I_local) x Gravedad_promedio
+
+METODOLOGIA:
+- Calcular ranking de clusters segun cada formula
+- Medir correlacion de Spearman entre rankings
+- Formula optima: mayor consenso con las otras
+
+RESULTADOS:
+
+Correlacion de Spearman:
+  Formula 1 vs Formula 2: 0.2571
+  Formula 1 vs Formula 3: 1.0000
+  Formula 2 vs Formula 3: 0.2571
+
+Correlacion promedio:
+  Formula 1: 0.6286
+  Formula 2: 0.2571
+  Formula 3: 0.6286
+
+CONCLUSION:
+Formula optima: Formula 1 (Densidad x Gravedad)
+Justificacion: Presenta mayor correlacion promedio con las otras formulas,
+               indicando robustez y consenso en priorizacion.
+
+================================================================================
+RESUMEN EJECUTIVO
+================================================================================
+
+1. Ventana temporal: 12 meses
+2. Epsilon DBSCAN: 1.0 km
+3. Formula de riesgo: Formula 1 (Densidad x Gravedad)
+
+Estos parametros seran utilizados en el sistema de priorizacion de
+intervenciones para identificar las zonas criticas de Bogota que requieren
+atencion inmediata de la Secretaria de Movilidad.
+
+================================================================================

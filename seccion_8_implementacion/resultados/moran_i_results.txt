@@ -1,0 +1,29 @@
+
+RESULTADOS: ANÁLISIS DE AUTOCORRELACIÓN ESPACIAL (MORAN'S I)
+================================================================
+
+Fecha: 2025-11-19 23:43:25
+Variable analizada: GRAVEDAD
+Muestra: 5,000 siniestros geocodificados
+
+ÍNDICE DE MORAN GLOBAL
+-----------------------
+I observado:        0.077079
+I esperado (H0):    -0.000200
+Varianza:           0.000041
+Z-score:            12.0864
+P-value:            0.000000
+
+INTERPRETACIÓN
+--------------
+Patrón espacial: CLUSTERING ESPACIAL (siniestros graves agrupados)
+Significancia estadística: p < 0.001 (altamente significativo)
+
+CONCLUSIÓN:
+Los siniestros graves en Bogotá muestran autocorrelación espacial POSITIVA significativa, lo que indica que tienden a agruparse en zonas específicas de la ciudad. Esto valida la pertinencia de estrategias de intervención focalizada en lugar de dispersa.
+
+PARÁMETROS TÉCNICOS
+-------------------
+Método de pesos espaciales: K-Nearest Neighbors
+K vecinos: 8
+Proyección: EPSG:4326 (WGS84)
