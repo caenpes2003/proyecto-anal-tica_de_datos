@@ -1,0 +1,82 @@
+# RESULTADOS: MODELOS CON FEATURES GEOESPACIALES
+
+## Comparacion de Rendimiento
+
+### Logistic Regression
+
+**SIN Features Geoespaciales:**
+- Accuracy: 0.8475
+- F1-macro: 0.6131
+- Tiempo: 2.42s
+
+**CON Features Geoespaciales:**
+- Accuracy: 0.7262
+- F1-macro: 0.5318
+- Tiempo: 2.89s
+
+**MEJORA:** -13.25% en F1-Score
+
+**Analisis:** Las features geoespaciales empeoran el rendimiento de Logistic Regression, posiblemente por mayor complejidad sin capacidad de capturar interacciones no-lineales.
+
+---
+
+### Random Forest
+
+**SIN Features Geoespaciales:**
+- Accuracy: 0.9740
+- F1-macro: 0.6517
+- Tiempo: 0.29s
+
+**CON Features Geoespaciales:**
+- Accuracy: 0.9763
+- F1-macro: 0.6531
+- Tiempo: 0.44s
+
+**MEJORA:** +0.21% en F1-Score
+
+**Analisis:** Mejora marginal pero positiva. Random Forest captura mejor las interacciones espaciales.
+
+---
+
+### XGBoost
+
+**SIN Features Geoespaciales:**
+- Accuracy: 0.9755
+- F1-macro: 0.6525
+- Tiempo: 0.37s
+
+**CON Features Geoespaciales:**
+- Accuracy: 0.9757
+- F1-macro: 0.6526
+- Tiempo: 0.36s
+
+**MEJORA:** +0.02% en F1-Score
+
+**Analisis:** Mejora practicamente nula, sugiriendo que las features temporales y geograficas base ya capturaban la mayor parte de la informacion espacial.
+
+---
+
+## Mejor Modelo (CON geo): Random Forest
+- F1-Score: 0.6531
+- Accuracy: 0.9763
+
+---
+
+## Interpretacion General
+
+**Por que el impacto es bajo?**
+
+1. **Informacion redundante:** Las features CODIGO_LOCALIDAD y tipo_via ya capturan patron espacial general
+2. **Muestra vs dataset completo:** Solo 15% del dataset tiene features geoespaciales
+3. **Distribucion uniforme:** 90% de siniestros cerca de bares - poca variabilidad para discriminar
+4. **Features mas importantes:** Temporales (hora, dia) siguen siendo mas predictivas que espaciales
+
+**Valor de las features geoespaciales:**
+
+Aunque NO mejoran significativamente la prediccion, SI aportan:
+- Comprension de DONDE ocurren los siniestros
+- Identificacion de zonas criticas
+- Validacion de hipotesis (90% cerca bares, 68% cerca centros comerciales)
+- Segmentacion de estrategias de prevencion
+
+**Recomendacion:** Mantener modelos base sin geo para prediccion global, usar analisis geoespacial para planificacion de intervenciones focalizadas.

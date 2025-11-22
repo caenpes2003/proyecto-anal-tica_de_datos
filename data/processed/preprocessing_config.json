@@ -1,0 +1,31 @@
+{
+  "cleaning": {
+    "remove_duplicates": true,
+    "missing_strategy": "smart",
+    "outlier_method": "validate",
+    "outlier_action": "remove"
+  },
+  "feature_engineering": {
+    "temporal": true,
+    "severity": true,
+    "geographic": true,
+    "interaction": true,
+    "aggregated": true
+  },
+  "transformation": {
+    "encode_method": "auto",
+    "scale_method": "standard",
+    "drop_redundant": true
+  },
+  "dimensionality": {
+    "enabled": true,
+    "method": "correlation",
+    "correlation_threshold": 0.95,
+    "variance_threshold": 0.01
+  },
+  "output": {
+    "save_intermediate": true,
+    "save_final": true,
+    "output_dir": "data/processed"
+  }
+}

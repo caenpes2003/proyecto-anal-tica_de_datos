@@ -1,0 +1,37 @@
+# RESULTADOS DE TESTS ESTADISTICOS - HIPOTESIS GEOESPACIALES
+
+## H4: Siniestros ocurren mas frecuentemente cerca de centros comerciales
+
+- **Test:** Chi-cuadrado
+- **Estadistico:** 21.1760
+- **P-value:** 0.000025 (2.52 × 10⁻⁵)
+- **Resultado:** ACEPTADA (p < 0.001)
+- **Interpretacion:** 20,396 (68.0%) siniestros cerca vs 9,603 lejos
+
+## H5: Siniestros nocturnos mas frecuentes cerca de bares
+
+- **Test:** Chi-cuadrado (solo periodo nocturno)
+- **Estadistico:** 7.6573
+- **P-value:** 0.022 (p < 0.05)
+- **Resultado:** ACEPTADA
+- **Interpretacion:** 6,197 siniestros nocturnos cerca de bares vs 730 lejos
+
+## H6: Gravedad mayor cerca de estaciones TransMilenio
+
+- **Test:** t-test
+- **Estadistico:** 3.1315
+- **P-value:** 0.0017 (p < 0.01)
+- **Resultado:** ACEPTADA
+- **Interpretacion:** Gravedad media cerca: 2.66 vs lejos: 2.63
+
+---
+
+## RESUMEN
+
+Las 3 hipotesis geoespaciales fueron ACEPTADAS con p-values < 0.05:
+
+1. Los siniestros SI ocurren mas frecuentemente cerca de centros comerciales (68%)
+2. Los siniestros nocturnos SI son mas frecuentes cerca de bares
+3. La gravedad SI es mayor cerca de estaciones TransMilenio
+
+Estos resultados validan la importancia de considerar la proximidad a Puntos de Interes (POIs) en el analisis de riesgo vial urbano.
