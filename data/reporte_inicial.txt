@@ -1,0 +1,203 @@
+====================================================================================================
+REPORTE DE ANÁLISIS INICIAL DE DATOS
+Proyecto: Análisis de Siniestros Viales - Bogotá
+Fecha de generación: 2025-10-23 19:46:17
+====================================================================================================
+
+4.1. FUENTES DE DATOS Y MÉTODOS DE RECOLECCIÓN
+----------------------------------------------------------------------------------------------------
+
+Fuente de datos:
+  - Nombre del archivo: siniestros_viales_consolidados_bogota.xlsx
+  - Ubicación: C:\Users\caenp\OneDrive\Escritorio\analitica_siniestros\data\siniestros_viales_consolidados_bogota.xlsx
+  - Tamaño del archivo: 46.95 MB
+  - Formato: Excel (.xlsx)
+
+Método de recolección:
+  - Dataset de siniestros viales consolidados de Bogotá
+  - Fuente oficial de registros de eventos de tránsito
+  - Recopilación sistemática de información de siniestros viales
+
+
+====================================================================================================
+4.2. DESCRIPCIÓN DE LOS CONJUNTOS DE DATOS CRUDOS
+----------------------------------------------------------------------------------------------------
+
+Información general del dataset:
+  - Total de registros: 196,162
+  - Total de columnas: 10
+  - Memoria utilizada: 44.68 MB
+
+Columnas del dataset:
+   1. CODIGO_ACCIDENTE (float64)
+   2. FECHA (object)
+   3. HORA (object)
+   4. GRAVEDAD (float64)
+   5. CLASE (float64)
+   6. CHOQUE (float64)
+   7. OBJETO_FIJO (float64)
+   8. DIRECCION (object)
+   9. CODIGO_LOCALIDAD (float64)
+  10. DISENO_LUGAR (float64)
+
+Estadísticas descriptivas - Variables numéricas:
+       CODIGO_ACCIDENTE       GRAVEDAD          CLASE         CHOQUE  OBJETO_FIJO  CODIGO_LOCALIDAD   DISENO_LUGAR
+count      1.961520e+05  196152.000000  196152.000000  167910.000000  6689.000000     196153.000000  196152.000000
+mean       6.997374e+06       2.636873       1.221955       1.127717     5.318583          9.316406       1.420312
+std        2.976910e+06       0.511668       0.653418       0.610152     3.756058         44.564367       1.284176
+min        4.401419e+06       1.000000       1.000000       1.000000     1.000000          1.000000       1.000000
+25%        4.451508e+06       2.000000       1.000000       1.000000     2.000000          6.000000       1.000000
+50%        4.501210e+06       3.000000       1.000000       1.000000     5.000000          9.000000       1.000000
+75%        1.048079e+07       3.000000       1.000000       1.000000    10.000000         12.000000       1.000000
+max        1.053701e+07       3.000000       7.000000       5.000000    16.000000      19621.000000      13.000000
+
+Estadísticas descriptivas - Variables categóricas:
+             FECHA      HORA      DIRECCION
+count       196152    196152         196156
+unique        2192      1439          92522
+top     06/12/2019  14:00:00  KR 80-CL 2 51
+freq           155      2528            213
+
+
+====================================================================================================
+4.3. PROBLEMAS DE CALIDAD DE LOS DATOS Y OBSERVACIONES INICIALES
+----------------------------------------------------------------------------------------------------
+
+Resumen de calidad de datos:
+  - Completitud general: 88.90%
+  - Total de valores faltantes: 217,800
+  - Registros duplicados: 5
+  - Porcentaje de duplicados: 0.00%
+
+Análisis de valores faltantes:
+  Se encontraron 10 columnas con valores faltantes:
+
+  - OBJETO_FIJO:
+      Valores faltantes: 189,473
+      Porcentaje: 96.59%
+      Tipo de dato: float64
+
+  - CHOQUE:
+      Valores faltantes: 28,252
+      Porcentaje: 14.40%
+      Tipo de dato: float64
+
+  - FECHA:
+      Valores faltantes: 10
+      Porcentaje: 0.01%
+      Tipo de dato: object
+
+  - CODIGO_ACCIDENTE:
+      Valores faltantes: 10
+      Porcentaje: 0.01%
+      Tipo de dato: float64
+
+  - GRAVEDAD:
+      Valores faltantes: 10
+      Porcentaje: 0.01%
+      Tipo de dato: float64
+
+  - HORA:
+      Valores faltantes: 10
+      Porcentaje: 0.01%
+      Tipo de dato: object
+
+  - CLASE:
+      Valores faltantes: 10
+      Porcentaje: 0.01%
+      Tipo de dato: float64
+
+  - DISENO_LUGAR:
+      Valores faltantes: 10
+      Porcentaje: 0.01%
+      Tipo de dato: float64
+
+  - CODIGO_LOCALIDAD:
+      Valores faltantes: 9
+      Porcentaje: 0.00%
+      Tipo de dato: float64
+
+  - DIRECCION:
+      Valores faltantes: 6
+      Porcentaje: 0.00%
+      Tipo de dato: object
+
+Análisis de registros duplicados:
+  - Total de duplicados: 5
+  - Porcentaje de duplicados: 0.00%
+  ⚠ Se recomienda revisar y eliminar duplicados
+
+Análisis de cardinalidad de variables categóricas:
+
+  - FECHA:
+      Valores únicos: 2,192
+      Ratio de cardinalidad: 0.0112
+      Top 5 valores más frecuentes:
+        • 06/12/2019: 155
+        • 11/05/2018: 155
+        • 08/06/2018: 151
+        • 15/11/2016: 150
+        • 08/11/2016: 149
+
+  - HORA:
+      Valores únicos: 1,439
+      Ratio de cardinalidad: 0.0073
+      Top 5 valores más frecuentes:
+        • 14:00:00: 2,528
+        • 13:00:00: 2,418
+        • 14:30:00: 2,409
+        • 15:00:00: 2,373
+        • 13:30:00: 2,295
+
+  - DIRECCION:
+      Valores únicos: 92,522
+      Ratio de cardinalidad: 0.4717
+      Top 5 valores más frecuentes:
+        • KR 80-CL 2 51: 213
+        • AV AVENIDA BOYACA-CL 80 02: 156
+        • CL 13-KR 72 02: 150
+        • AV AVENIDA BOYACA-CL 13 02: 147
+        • CL 100-KR 15 02: 144
+
+Detección de valores atípicos (método IQR):
+
+  - CLASE:
+      Outliers detectados: 28,237 (14.39%)
+      Rango normal (Q1-1.5*IQR, Q3+1.5*IQR): [1.00, 1.00]
+      Q1: 1.00 | Q3: 1.00 | IQR: 0.00
+
+  - CHOQUE:
+      Outliers detectados: 7,102 (3.62%)
+      Rango normal (Q1-1.5*IQR, Q3+1.5*IQR): [1.00, 1.00]
+      Q1: 1.00 | Q3: 1.00 | IQR: 0.00
+
+  - CODIGO_LOCALIDAD:
+      Outliers detectados: 1 (0.00%)
+      Rango normal (Q1-1.5*IQR, Q3+1.5*IQR): [-3.00, 21.00]
+      Q1: 6.00 | Q3: 12.00 | IQR: 6.00
+
+  - DISENO_LUGAR:
+      Outliers detectados: 45,163 (23.02%)
+      Rango normal (Q1-1.5*IQR, Q3+1.5*IQR): [1.00, 1.00]
+      Q1: 1.00 | Q3: 1.00 | IQR: 0.00
+
+
+====================================================================================================
+OBSERVACIONES Y RECOMENDACIONES
+----------------------------------------------------------------------------------------------------
+
+Problemas identificados:
+  1. Se encontraron valores faltantes en 10 columnas
+  2. Existen 5 registros duplicados
+
+Próximos pasos recomendados:
+  1. Limpiar y procesar valores faltantes según estrategia definida
+  2. Gestionar registros duplicados
+  3. Validar y convertir tipos de datos si es necesario
+  4. Realizar análisis exploratorio detallado por variable
+  5. Generar visualizaciones de distribuciones y relaciones
+  6. Documentar hallazgos y decisiones de preprocesamiento
+
+====================================================================================================
+FIN DEL REPORTE
+====================================================================================================
