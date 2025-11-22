@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indice - Analisis de Siniestralidad Vial Bogota</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .card p {
+            color: #666;
+            margin: 10px 0;
+        }
+        .card a {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .card a:hover {
+            background: #764ba2;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .stat-box h3 {
+            margin: 0 0 10px 0;
+            font-size: 36px;
+            color: white;
+        }
+        .stat-box p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Analisis de Siniestralidad Vial - Bogota D.C. (2015-2020)</h1>
+
+        <p style="font-size: 18px; color: #666; margin-bottom: 30px;">
+            Sistema integral de identificacion de zonas criticas y priorizacion de intervenciones
+            para la reduccion de siniestralidad vial en Bogota.
+        </p>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h3>20,028</h3>
+                <p>Siniestros Graves<br>Analizados</p>
+            </div>
+            <div class="stat-box">
+                <h3>20</h3>
+                <p>Intersecciones<br>Criticas</p>
+            </div>
+            <div class="stat-box">
+                <h3>5</h3>
+                <p>Clusters<br>Espaciales</p>
+            </div>
+            <div class="stat-box">
+                <h3>98.2%</h3>
+                <p>Impacto Potencial<br>de Intervencion</p>
+            </div>
+        </div>
+
+        <h2>🗺️ Mapas Interactivos</h2>
+
+        <div class="card">
+            <h3>🎯 Dashboard Principal (RECOMENDADO)</h3>
+            <p>
+                Mapa consolidado con todas las capas: Heatmap, Top 20 intersecciones criticas,
+                y clusters espaciales. Incluye controles para alternar entre capas.
+            </p>
+            <p><strong>Contiene:</strong> Heatmap + Top 20 + Clusters</p>
+            <a href="dashboard_interactivo.html" target="_blank">Abrir Dashboard →</a>
+        </div>
+
+        <div class="card">
+            <h3>🔥 Mapa de Densidad (KDE Hotspots)</h3>
+            <p>
+                Visualizacion de zonas calientes utilizando Kernel Density Estimation.
+                Identifica areas con mayor concentracion de siniestros graves.
+            </p>
+            <p><strong>Tecnica:</strong> KDE con bandwidth optimo (Scott)</p>
+            <a href="../seccion_9_resultados/visualizaciones/9.4_kde_hotspots.html" target="_blank">Ver Mapa →</a>
+        </div>
+
+        <div class="card">
+            <h3>🔴 Mapa de Clusters (DBSCAN)</h3>
+            <p>
+                Agrupaciones espaciales de siniestros graves identificadas mediante DBSCAN
+                (epsilon=1km, min_samples=10). Muestra 5 clusters diferenciados por color.
+            </p>
+            <p><strong>Tecnica:</strong> DBSCAN con parametros validados experimentalmente</p>
+            <a href="../seccion_9_resultados/visualizaciones/9.5_dbscan_clusters.html" target="_blank">Ver Mapa →</a>
+        </div>
+
+        <div class="card">
+            <h3>📍 Top 20 Intersecciones Prioritarias</h3>
+            <p>
+                Las 20 intersecciones mas criticas de Bogota, rankeadas por score de riesgo
+                (Densidad × Gravedad). Intervencion en estas 20 impacta 1.9% de siniestros graves.
+            </p>
+            <p><strong>Formula:</strong> Risk = Densidad × Gravedad_promedio</p>
+            <a href="../seccion_9_resultados/visualizaciones/9.6_top20_intersecciones.html" target="_blank">Ver Mapa →</a>
+        </div>
+
+        <h2>📄 Reportes y Datos</h2>
+
+        <div class="card">
+            <h3>📊 Reporte Ejecutivo</h3>
+            <p>
+                Documento completo con recomendaciones para la Secretaria de Movilidad,
+                incluyendo estrategias de intervencion, impacto estimado y cronograma.
+            </p>
+            <a href="recomendaciones.txt" target="_blank">Leer Reporte →</a>
+        </div>
+
+        <div class="card">
+            <h3>📈 Top 20 Intersecciones (CSV)</h3>
+            <p>
+                Listado detallado de las 20 intersecciones criticas con coordenadas,
+                scores de riesgo, y estadisticas de siniestralidad.
+            </p>
+            <a href="reporte_top20.csv" download>Descargar CSV →</a>
+        </div>
+
+        <div class="card">
+            <h3>🔬 Perfiles de Clusters</h3>
+            <p>
+                Caracteristicas detalladas de cada cluster espacial: densidad, gravedad promedio,
+                localidad predominante, y nivel de riesgo.
+            </p>
+            <a href="../seccion_10_interpretacion/analisis/perfiles_clusters.csv" download>Descargar CSV →</a>
+        </div>
+
+        <h2>📈 Visualizaciones Estaticas</h2>
+
+        <div class="card">
+            <h3>📉 Moran's I Scatterplot</h3>
+            <p>
+                Grafico de autocorrelacion espacial que demuestra clustering significativo
+                (I=0.077, p<0.001). Valida que siniestros graves se agrupan espacialmente.
+            </p>
+            <p><strong>Resultado:</strong> Clustering espacial significativo detectado</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Experimentos de Validacion</h3>
+            <p>
+                Graficos comparativos de los 3 experimentos: ventana temporal optima (12 meses),
+                epsilon DBSCAN optimo (1km), y formula de riesgo optima (Densidad × Gravedad).
+            </p>
+            <p><strong>Archivos:</strong> 9.2, 9.3, 9.7 en seccion_9_resultados/visualizaciones/</p>
+        </div>
+
+        <div class="card">
+            <h3>🏆 Distribucion de Niveles de Riesgo</h3>
+            <p>
+                Grafico de barras mostrando distribucion de clusters por nivel de riesgo
+                (CRITICO, ALTO, MEDIO, BAJO) y Top 10 intersecciones mas criticas.
+            </p>
+            <p><strong>Archivo:</strong> 10.4_priorizacion_zonas.png</p>
+        </div>
+
+        <h2>🔍 Metodologia y Resultados Tecnicos</h2>
+
+        <div class="card">
+            <h3>📋 Resultados de Moran's I</h3>
+            <p>
+                Analisis de autocorrelacion espacial completo con interpretacion estadistica.
+            </p>
+            <a href="../seccion_8_implementacion/resultados/moran_i_results.txt" target="_blank">Ver Resultados →</a>
+        </div>
+
+        <div class="card">
+            <h3>🔬 Resultados de DBSCAN</h3>
+            <p>
+                Metricas de calidad de clustering: Silhouette Score, Calinski-Harabasz Index,
+                y caracteristicas de los clusters identificados.
+            </p>
+            <a href="../seccion_8_implementacion/resultados/dbscan_results.txt" target="_blank">Ver Resultados →</a>
+        </div>
+
+        <div class="card">
+            <h3>⚗️ Resultados de Experimentos</h3>
+            <p>
+                Informe completo de los 3 experimentos de validacion metodologica con
+                conclusiones y parametros optimos identificados.
+            </p>
+            <a href="../seccion_8_implementacion/resultados/experimentos_resultados.txt" target="_blank">Ver Resultados →</a>
+        </div>
+
+        <div class="footer">
+            <p><strong>Proyecto:</strong> Analisis de Siniestralidad Vial - Bogota D.C.</p>
+            <p><strong>Periodo:</strong> 2015-2020 | <strong>Registros:</strong> 196,152 siniestros (30,014 geocodificados)</p>
+            <p><strong>Generado:</strong> 2025-11-20 14:00:22</p>
+            <p style="margin-top: 15px; color: #999; font-size: 12px;">
+                Sistema de Priorizacion de Intervenciones para Reduccion de Siniestralidad Vial
+            </p>
+        </div>
+    </div>
+</body>
+</html>
