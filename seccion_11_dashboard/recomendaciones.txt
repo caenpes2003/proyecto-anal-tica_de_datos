@@ -1,0 +1,226 @@
+
+================================================================================
+REPORTE EJECUTIVO: SISTEMA DE PRIORIZACION DE INTERVENCIONES
+================================================================================
+
+Fecha: 2025-11-20 00:18:51
+Secretaria de Movilidad de Bogota D.C.
+
+================================================================================
+1. RESUMEN EJECUTIVO
+================================================================================
+
+Este reporte identifica las zonas criticas de siniestralidad vial en Bogota
+que requieren intervencion INMEDIATA. La priorizacion se basa en:
+
+  - Formula de riesgo: Score = Densidad de siniestros x Gravedad promedio
+  - Periodo analizado: 2015-2020
+  - Siniestros graves analizados: 20,028
+  - Clusters espaciales identificados: 6
+  - Intersecciones recurrentes (>=5 siniestros): 305
+
+================================================================================
+2. TOP 20 INTERSECCIONES CRITICAS
+================================================================================
+
+Las siguientes 20 intersecciones concentran 1.9% de los siniestros
+graves de la ciudad. Se recomienda INTERVENCION PRIORITARIA:
+
+
+1. CL 80-KR 72 2
+   Localidad: ENGATIVA
+   Siniestros: 25 | Gravedad: 2.92 | Score: 100.0/100
+   Nivel: CRITICO
+
+2. AV AVENIDA BOYACA-CL 26 02
+   Localidad: FONTIBON
+   Siniestros: 24 | Gravedad: 3.00 | Score: 98.3/100
+   Nivel: CRITICO
+
+3. KR 80-CL 2 51
+   Localidad: KENNEDY
+   Siniestros: 24 | Gravedad: 2.92 | Score: 95.0/100
+   Nivel: CRITICO
+
+4. KR 50-CL 3 02
+   Localidad: PUENTE ARANDA
+   Siniestros: 23 | Gravedad: 3.00 | Score: 93.3/100
+   Nivel: CRITICO
+
+5. CL 100-KR 15 02
+   Localidad: USAQUEN
+   Siniestros: 22 | Gravedad: 3.00 | Score: 88.3/100
+   Nivel: CRITICO
+
+6. AV AVENIDA BOYACA-CL 80 02
+   Localidad: KENNEDY
+   Siniestros: 21 | Gravedad: 3.00 | Score: 83.3/100
+   Nivel: CRITICO
+
+7. CL 26-KR 72 02
+   Localidad: FONTIBON
+   Siniestros: 20 | Gravedad: 3.00 | Score: 78.3/100
+   Nivel: ALTO
+
+8. CL 80-KR 72 02
+   Localidad: ENGATIVA
+   Siniestros: 20 | Gravedad: 3.00 | Score: 78.3/100
+   Nivel: ALTO
+
+9. KR 30-CL 6 02
+   Localidad: MARTIRES
+   Siniestros: 20 | Gravedad: 2.90 | Score: 75.0/100
+   Nivel: ALTO
+
+10. AV AVENIDA BOYACA-CL 12 02
+   Localidad: KENNEDY
+   Siniestros: 18 | Gravedad: 3.00 | Score: 68.3/100
+   Nivel: ALTO
+
+11. CL 13-KR 72 02
+   Localidad: FONTIBON
+   Siniestros: 18 | Gravedad: 3.00 | Score: 68.3/100
+   Nivel: ALTO
+
+12. CL 22C-KR 68F 02
+   Localidad: FONTIBON
+   Siniestros: 18 | Gravedad: 3.00 | Score: 68.3/100
+   Nivel: ALTO
+
+13. AV AVENIDA BOYACA-CL 19 02
+   Localidad: FONTIBON
+   Siniestros: 17 | Gravedad: 3.00 | Score: 63.3/100
+   Nivel: ALTO
+
+14. CL 100-KR 45 02
+   Localidad: USAQUEN
+   Siniestros: 17 | Gravedad: 3.00 | Score: 63.3/100
+   Nivel: ALTO
+
+15. AV AVENIDA CIUDAD DE CALI-CL 26 02
+   Localidad: ENGATIVA
+   Siniestros: 17 | Gravedad: 2.88 | Score: 60.0/100
+   Nivel: ALTO
+
+16. AV AVENIDA BOYACA-CL 13 02
+   Localidad: KENNEDY
+   Siniestros: 16 | Gravedad: 3.00 | Score: 58.3/100
+   Nivel: MEDIO
+
+17. AV AVENIDA BOYACA-CL 60 S 02
+   Localidad: CIUDAD BOLIVAR
+   Siniestros: 16 | Gravedad: 3.00 | Score: 58.3/100
+   Nivel: MEDIO
+
+18. AK 45-CL 187 02
+   Localidad: USAQUEN
+   Siniestros: 15 | Gravedad: 3.00 | Score: 53.3/100
+   Nivel: MEDIO
+
+19. AV AVENIDA BOYACA-CL 9 02
+   Localidad: KENNEDY
+   Siniestros: 15 | Gravedad: 3.00 | Score: 53.3/100
+   Nivel: MEDIO
+
+20. AV AVENIDA DEL SUR-KR 63 02
+   Localidad: TUNJUELITO
+   Siniestros: 15 | Gravedad: 3.00 | Score: 53.3/100
+   Nivel: MEDIO
+
+================================================================================
+3. CLUSTERS ESPACIALES - ZONAS DE ALTO RIESGO
+================================================================================
+
+Se identificaron 6 clusters espaciales con los siguientes
+niveles de riesgo:
+
+  CRITICO   : 1 cluster(es)
+  BAJO      : 5 cluster(es)
+
+Clusters CRITICOS (requieren atencion urgente):
+
+  Cluster 0:
+    - Siniestros: 19676
+    - Gravedad promedio: 2.95
+    - Localidad: USAQUEN
+    - Score: 100.0/100
+
+================================================================================
+4. IMPACTO ESTIMADO DE INTERVENCIONES
+================================================================================
+
+ESCENARIO 1: Intervencion en Top 20 intersecciones
+  - Siniestros impactados: 381 (1.9%)
+  - Estrategia: Intervencion puntual en 20 ubicaciones
+  - Recursos: BAJOS (20 puntos criticos)
+  - Tiempo estimado: 3-6 meses
+
+ESCENARIO 2: Intervencion en clusters CRITICOS
+  - Siniestros impactados: 19,676 (98.2%)
+  - Estrategia: Intervencion por zonas amplias
+  - Recursos: ALTOS (1 cluster(es) extenso(s))
+  - Tiempo estimado: 12-18 meses
+
+RECOMENDACION: Implementar ESCENARIO 1 (Top 20) en fase inmediata,
+               seguido de ESCENARIO 2 (Clusters) en fase de mediano plazo.
+
+================================================================================
+5. RECOMENDACIONES POR TIPO DE INTERVENCION
+================================================================================
+
+Para Top 20 Intersecciones:
+  1. Instalacion de semaforos inteligentes / camaras
+  2. Rediseno geometrico de intersecciones
+  3. Senalizacion horizontal y vertical reforzada
+  4. Reductores de velocidad en zonas criticas
+  5. Operativos de control de transito (horarios pico)
+
+Para Clusters Criticos:
+  1. Auditoria de seguridad vial (Road Safety Audit)
+  2. Mejoramiento de iluminacion
+  3. Separacion de flujos vehiculares/peatonales
+  4. Ciclorutas segregadas en zonas de alto riesgo
+  5. Campanas de educacion vial focalizada
+
+================================================================================
+6. SIGUIENTES PASOS
+================================================================================
+
+INMEDIATO (0-3 meses):
+  [ ] Visitas de campo a Top 20 intersecciones
+  [ ] Evaluacion tecnica de viabilidad de intervenciones
+  [ ] Estimacion de presupuesto por interseccion
+  [ ] Priorizacion final segun presupuesto disponible
+
+CORTO PLAZO (3-6 meses):
+  [ ] Diseno de intervenciones
+  [ ] Aprobacion de proyectos
+  [ ] Ejecucion de obras en Top 5 intersecciones
+
+MEDIANO PLAZO (6-12 meses):
+  [ ] Ejecucion Top 6-20 intersecciones
+  [ ] Evaluacion de impacto de intervenciones (antes/despues)
+  [ ] Inicio de estudios para clusters criticos
+
+LARGO PLAZO (12-24 meses):
+  [ ] Intervenciones en clusters criticos
+  [ ] Actualizacion de modelo con datos 2021-2024
+  [ ] Sistema de monitoreo continuo de nuevas zonas de riesgo
+
+================================================================================
+CONTACTO
+================================================================================
+
+Para mas informacion sobre este analisis, contactar:
+Proyecto Analitica de Siniestros
+Secretaria de Movilidad de Bogota D.C.
+
+Archivos tecnicos:
+  - Mapa interactivo: seccion_9_resultados/visualizaciones/9.6_top20_intersecciones.html
+  - Top 20 detallado: seccion_11_dashboard/reporte_top20.csv
+  - Perfiles de clusters: seccion_10_interpretacion/analisis/perfiles_clusters.csv
+
+================================================================================
+NOTA: Este reporte es generado automaticamente por el Sistema de Priorizacion
+      de Intervenciones basado en analisis de 196,152 siniestros (2015-2020).
+================================================================================
